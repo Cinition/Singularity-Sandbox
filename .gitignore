@@ -10,4 +10,4 @@ bin/
 *.sln
 
 # Exclude
-!vendor/bin
+!Vendor/bin
