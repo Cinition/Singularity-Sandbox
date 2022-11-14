@@ -9,15 +9,14 @@ project "Singularity-Sandbox"
     targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
     
-    files { "src/**.h", "src/**.cpp" }
+    files { "Src/**.h", "Src/**.cpp" }
 
-    includedirs
-    {
+    includedirs {
         "../Vendor/imgui",
 
         --Singularity Includes
         
-        "../Singularity/src",
+        "../Singularity/Src",
         "../Singularity/Vendors/GLFW/include",
         "../Singularity/Vendors/GLM",
         "%{VULKAN_ENV}/Include",
@@ -25,8 +24,7 @@ project "Singularity-Sandbox"
 
     include "Vendor/vendor.lua"
 
-    links
-    {
+    links {
         "Singularity",
         "ImGui"
     }
