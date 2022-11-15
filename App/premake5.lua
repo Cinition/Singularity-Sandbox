@@ -3,10 +3,11 @@ project "Singularity-Sandbox"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
+    targetdir "bin/%{cfg.buildcfg}"
     staticruntime "off"
 
-    targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("../Bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("../Bin-Int/" .. outputdir .. "/%{prj.name}")
     
     files { 
         "Src/**.h",
@@ -14,21 +15,18 @@ project "Singularity-Sandbox"
     }
 
     includedirs {
-        "../Vendor/imgui",
 
         --Singularity Includes
 
         "../Singularity/Src",
-        "../Singularity/Vendors/GLFW/include",
-        "../Singularity/Vendors/GLM",
+        "../Singularity/Vendor/GLFW/include",
+        "../Singularity/Vendor/imgui",
+        "../Singularity/Vendor/GLM",
         "%{VULKAN_ENV}/Include",
     }
 
-    include "Vendor/vendor.lua"
-
     links {
         "Singularity",
-        "ImGui".
     }
 
     filter "system:windows"
@@ -46,7 +44,7 @@ project "Singularity-Sandbox"
         optimize "On"
         symbols "On"
 
-    filter "configurations:Dist"
+    filter "configurations:Publish"
         kind "WindowedApp"
         defines { "WL_DIST" }
         runtime "Release"

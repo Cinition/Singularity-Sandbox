@@ -1,6 +1,3 @@
 [submodule "Singularity"]
 	path = Singularity
 	url = https://github.com/Cinition/Singularity-Engine
-[submodule "Vendor/imgui"]
-	path = Vendor/imgui
-	url = https://github.com/ocornut/imgui
