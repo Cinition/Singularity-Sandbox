@@ -3,19 +3,21 @@ project "Singularity-Sandbox"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
-    targetdir "bin/%{cfg.buildcfg}"
     staticruntime "off"
 
     targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
     
-    files { "Src/**.h", "Src/**.cpp" }
+    files { 
+        "Src/**.h",
+        "Src/**.cpp",
+    }
 
     includedirs {
         "../Vendor/imgui",
 
         --Singularity Includes
-        
+
         "../Singularity/Src",
         "../Singularity/Vendors/GLFW/include",
         "../Singularity/Vendors/GLM",
@@ -26,9 +28,8 @@ project "Singularity-Sandbox"
 
     links {
         "Singularity",
-        "ImGui"
+        "ImGui".
     }
-
 
     filter "system:windows"
         systemversion "latest"
