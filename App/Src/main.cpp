@@ -5,7 +5,7 @@
 
 int main()
 {
-	String test = String( "First working string in %s\n", "Singularity");
+	Singularity::String test = Singularity::String( "First working string in %s\n", "Singularity");
 
 	std::cout << test.ToChar();
 	std::cin.ignore();
