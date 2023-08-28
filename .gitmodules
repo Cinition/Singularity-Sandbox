@@ -1,0 +1,3 @@
+[submodule "Dependencies/Singularity-Engine"]
+	path = Dependencies/Singularity-Engine
+	url = https://github.com/Cinition/Singularity-Engine
