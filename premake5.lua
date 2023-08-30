@@ -1,3 +1,5 @@
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
 workspace "Singularity"
     architecture "x86_64"
     startproject "Singularity"
