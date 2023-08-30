@@ -20,8 +20,8 @@ workspace "Singularity"
         cppdialect "C++17"
         staticruntime "off"
 
-        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-        objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+        targetdir ( "bin/" .. outputdir .. "/%{prj.name}" )
+        objdir    ( "obj/" .. outputdir .. "/%{prj.name}" )
 
         filter "configurations:Debug"
             runtime "Debug"

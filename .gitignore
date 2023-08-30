@@ -1,3 +1,7 @@
+# Singularity 
+bin/
+obj/
+
 # Prerequisites
 *.d
 
